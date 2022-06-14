@@ -10,6 +10,7 @@ import mark from 'markdown-it-mark'
 import toc from 'markdown-it-toc-and-anchor'
 import katex from 'markdown-it-katex'
 import tasklists from 'markdown-it-task-lists'
+import {h} from 'vue'
 
 export default {
   md: new markdownIt(),
@@ -137,7 +138,7 @@ export default {
     }
   },
 
-  render(createElement) {
+  render() {
     this.md = new markdownIt()
       .use(subscript)
       .use(superscript)
@@ -209,7 +210,7 @@ export default {
     outHtml = this.postrender(outHtml);
 
     this.$emit('rendered', outHtml)
-    return createElement(
+    return h(
       'div', {
         domProps: {
           innerHTML: outHtml,
