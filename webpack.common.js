@@ -15,8 +15,10 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: "vue-markdown-v3.common.js",
-    library: "VueMarkdownV3",
-    libraryTarget: "umd"
+    library: {
+      name: 'VueMarkdown',
+      type: 'umd',
+    },
   },
   externals: /^[^.]/,
   plugins: [

@@ -14,8 +14,10 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'vue-markdown-v3.js',
-    library: 'VueMarkdownV3',
-    libraryTarget: 'umd'
+    library: {
+      name: 'VueMarkdown',
+      type: 'umd',
+    },
   },
   plugins: [
     new webpack.BannerPlugin(banner, { raw: true })
