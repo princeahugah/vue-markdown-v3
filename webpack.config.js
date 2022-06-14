@@ -9,16 +9,17 @@ const banner =
   " */\n";
 
 module.exports = {
-  mode: process.env.NODE_ENV === 'production' ? 'production': 'development',
+  mode: 'production',
   entry: './src/build.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'vue-markdown-v3.js',
     library: {
       name: 'VueMarkdown',
       type: 'umd',
     },
   },
+  devtool: process.env.NODE_ENV === 'development' ? 'source-map' : 'hidden-source-map',
   plugins: [
     new webpack.BannerPlugin(banner, { raw: true })
   ],

@@ -1,0 +1,8 @@
+/*!
+ * /**
+ *  * vue-markdown-v3 v3.0.2
+ *  * https://github.com/princeahugah/vue-markdown-v3
+ *  * MIT License
+ *  * /
+ *
+ */
